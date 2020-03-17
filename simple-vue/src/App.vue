@@ -2,9 +2,11 @@
   div#app
     full-page(ref="fullpage" :options="options")
       .section
+        NoiseWhite
+        WhiteShow(:text="date.format('YYYY.MM.DD')")
         Date(:date="date")
         .layer
-          Fireworks
+          Fireworks(ref="fireworks")
       .section
         p Second section ...
         button(@click="add()") add
@@ -14,12 +16,16 @@
 
 <script>
 import Date from '@/components/Date'
+import NoiseWhite from '@/components/NoiseWhite'
+import WhiteShow from '@/components/WhiteShow'
 import Fireworks from '@/components/Fireworks'
 import moment from 'moment'
 
 export default {
   components: {
     Date,
+    NoiseWhite,
+    WhiteShow,
     Fireworks
   },
   data() {

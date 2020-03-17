@@ -137,20 +137,22 @@ export default {
       });
 
       this.frame++
-      requestAnimationFrame(this.loop)
+      this.reqId = requestAnimationFrame(this.loop)
+    },
+    start() {
+      this.setStage()
+      this.loop()
+    },
+    stop() {
+      this.setStage()
+      window.cancelAnimationFrame(this.reqId)
     }
   },
   mounted() {
     this.automate = true
-
     canvas.addEventListener('mousedown', this.boom)
     window.addEventListener('resize', this.setStage)
-
     this.$refs.fireworks.appendChild(canvas)
-
-    this.setStage()
-    this.createRandomParticles()
-    this.loop()
   }
 }
 </script>
