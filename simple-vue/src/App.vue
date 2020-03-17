@@ -3,6 +3,8 @@
     full-page(ref="fullpage" :options="options")
       .section
         Date(:date="date")
+        .layer
+          Fireworks
       .section
         p Second section ...
         button(@click="add()") add
@@ -12,11 +14,13 @@
 
 <script>
 import Date from '@/components/Date'
+import Fireworks from '@/components/Fireworks'
 import moment from 'moment'
 
 export default {
   components: {
-    Date
+    Date,
+    Fireworks
   },
   data() {
     return {
@@ -41,4 +45,15 @@ export default {
 body, html
   margin 0
   padding 0
+  .section
+    .fp-tableCell
+      display flex
+      justify-content center
+      align-items center
+      .layer
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
 </style>
