@@ -37,11 +37,12 @@ export default {
   background-color white
   opacity 0
   animation 0.25s ease-out 2.05s 1 normal forwards running fadeIn
+  z-index 1
   .wrap
     position absolute
     top 50%
     left 50%
-    width 40%
+    width 50%
     transform translate(-50%, -50%)
     padding 4px 30px
     overflow hidden
@@ -61,7 +62,7 @@ export default {
     p
       margin 0
       text-align center
-      font-size 50px
+      font-size 34px
       color #fff
       text-shadow 0px 1.4px 0px rgb(125, 215, 228), 0px -1.4px 0px rgb(240, 66, 37)
 </style>

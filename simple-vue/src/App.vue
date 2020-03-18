@@ -2,10 +2,12 @@
   div#app
     full-page(ref="fullpage" :options="options")
       .section
+        CircleIn
+        WiggleText(text="Yyi")
         NoiseWhite
         WhiteShow(:text="date.format('YYYY.MM.DD')")
-        FourLine
-        Date(:date="date")
+        //FourLine
+        // Date(:date="date")
         .layer
           Fireworks(ref="fireworks")
       .section
@@ -17,6 +19,8 @@
 
 <script>
 import Date from '@/components/Date'
+import CircleIn from '@/components/CircleIn'
+import WiggleText from '@/components/WiggleText'
 import NoiseWhite from '@/components/NoiseWhite'
 import WhiteShow from '@/components/WhiteShow'
 import FourLine from '@/components/FourLine'
@@ -26,6 +30,8 @@ import moment from 'moment'
 export default {
   components: {
     Date,
+    CircleIn,
+    WiggleText,
     NoiseWhite,
     WhiteShow,
     FourLine,

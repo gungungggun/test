@@ -62,6 +62,7 @@ export default {
   left 0
   width 100%
   height 100vh
+  opacity .8
   animation 0.12s ease-in-out 1.3s 1 normal forwards running noiseWhite
   .noise
     position absolute
