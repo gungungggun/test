@@ -4,6 +4,7 @@
       .section
         NoiseWhite
         WhiteShow(:text="date.format('YYYY.MM.DD')")
+        FourLine
         Date(:date="date")
         .layer
           Fireworks(ref="fireworks")
@@ -18,6 +19,7 @@
 import Date from '@/components/Date'
 import NoiseWhite from '@/components/NoiseWhite'
 import WhiteShow from '@/components/WhiteShow'
+import FourLine from '@/components/FourLine'
 import Fireworks from '@/components/Fireworks'
 import moment from 'moment'
 
@@ -26,6 +28,7 @@ export default {
     Date,
     NoiseWhite,
     WhiteShow,
+    FourLine,
     Fireworks
   },
   data() {
