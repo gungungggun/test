@@ -8,6 +8,10 @@
     .ns
     .ns
     .ns
+  .sub(v-if="sub != ''" :class="{ anim: isAnim }")
+    .line
+    .subt {{ sub }}
+    .line
 </template>
 
 <script>
@@ -18,6 +22,10 @@ export default {
   },
   props: {
     text: {
+      type: String,
+      default: ''
+    },
+    sub: {
       type: String,
       default: ''
     },
@@ -47,6 +55,18 @@ export default {
     transform translateX(-101%)
   100%
     transform translateX(101%)
+
+@keyframes scaleLine
+  0%
+    transform scaleX(0)
+  50%
+    transform scaleX(25)
+  70%
+    transform scaleX(1)
+  80%
+    transform scaleX(2.6)
+  100%
+    transform scaleX(1)
 
 .noise-title
   position relative
@@ -97,4 +117,33 @@ export default {
         background-color rgb(255, 255, 255)
         transform translateX(-101%)
         border-radius 50px
+  .sub
+    margin-top 30px
+    display grid
+    grid-template-columns repeat(3, auto)
+    align-items center
+    justify-content center
+    gap 8px
+    &.anim
+      .line
+        animation 0.6s ease-out 0.6s 1 normal forwards running scaleLine
+    .subt
+      position relative
+      font-size 14px
+      letter-spacing 0.25em
+      color rgb(255, 255, 255)
+      opacity 0
+      animation 0.22s cubic-bezier(0, 0, 0.15, 1) 0.4s 1 normal forwards running opacityIn
+      width: 100%;
+      font-weight: bold;
+      text-align: center;
+    .line
+      width 6px
+      height 1px
+      background-color rgb(255, 255, 255)
+      transform scaleX(0)
+      &:first-of-type
+        transform-origin right center
+      &:last-of-type
+        transform-origin left center
 </style>

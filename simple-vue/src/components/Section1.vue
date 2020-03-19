@@ -1,7 +1,7 @@
 <template lang="pug">
 .section1
   .wrap
-    NoiseTitle(text="TEST" :isAnim="isAnim")
+    NoiseTitle(text="TEST" sub="OKOK" :isAnim="isAnim")
     button(@click="isAnim = !isAnim") Anim
 </template>
 
@@ -20,12 +20,6 @@ export default {
 </script>
 
 <style lang="stylus">
-@keyframes bg
-  0%
-    opacity 0
-  100%
-    opacity 1
-
 .section1
   position absolute
   width 100%
@@ -35,9 +29,7 @@ export default {
   left 0px
   right 0px
   bottom 0px
-  opacity 0
   background: url('https://divnil.com/wallpaper/iphone-x/img/app/w/a/wallpaper-iphone-7-1080-1920-full-hd-616_38b58e96f854e673fb0a4c9d0cec9f23_raw.jpg') center center / cover no-repeat
-  animation 0.1s ease-out 2.92s 1 normal forwards running bg
   &:after
     content ""
     display block
