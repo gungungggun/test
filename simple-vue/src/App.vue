@@ -5,7 +5,8 @@
         CircleIn
         WiggleText(text="Yyi")
         NoiseWhite
-        WhiteShow(:text="date.format('YYYY.MM.DD')")
+        //WhiteShow(:text="date.format('YYYY.MM.DD')")
+        SkewTextIn
         //FourLine
         // Date(:date="date")
         .layer
@@ -22,6 +23,7 @@ import Date from '@/components/Date'
 import CircleIn from '@/components/CircleIn'
 import WiggleText from '@/components/WiggleText'
 import NoiseWhite from '@/components/NoiseWhite'
+import SkewTextIn from '@/components/SkewTextIn'
 import WhiteShow from '@/components/WhiteShow'
 import FourLine from '@/components/FourLine'
 import Fireworks from '@/components/Fireworks'
@@ -33,6 +35,7 @@ export default {
     CircleIn,
     WiggleText,
     NoiseWhite,
+    SkewTextIn,
     WhiteShow,
     FourLine,
     Fireworks
