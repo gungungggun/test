@@ -1,15 +1,15 @@
 <template lang="pug">
 .section1
   .wrap
-    Glitch(text="ABOUT" :delay="0" :fontSize="50" :isAnim="isAnim")
+    NoiseTitle(text="TEST" :isAnim="isAnim")
     button(@click="isAnim = !isAnim") Anim
 </template>
 
 <script>
-import Glitch from '@/components/Glitch'
+import NoiseTitle from '@/components/NoiseTitle'
 export default {
   components: {
-    Glitch
+    NoiseTitle
   },
   data() {
     return {

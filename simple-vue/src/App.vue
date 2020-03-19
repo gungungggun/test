@@ -2,6 +2,8 @@
   div#app
     full-page(ref="fullpage" :options="options")
       .section
+        Section1
+      .section
         header(:class="{ show: isShowHeader }")
           p(v-if="!isNext") 画面をタップすると花火が出るよ
           p(v-else) スクロールで次のページへ
@@ -22,8 +24,7 @@
         //Noise(:delay="3.3" :zIndex="2")
         //.layer
         //  Fireworks(ref="fireworks" :hue="hue" @fire="fire")
-      .section
-        Section1
+
 </template>
 
 <script>
