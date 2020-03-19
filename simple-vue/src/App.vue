@@ -6,12 +6,14 @@
         Rain
         FourLineBall
         WiggleText(text="Yyi")
-        NoiseWhite
+        Noise
         SkewTextIn
         WhiteShow(:text="date.format('YYYY.MM.DD')")
-        NoiseWhite(bg="#000" :delay="2.15" :zIndex="1")
+        Noise(bg="#000" :delay="2.15" :zIndex="1")
         FourLine
         Background
+        MainText
+        Noise(:delay="3.3" :zIndex="2")
         // Date(:date="date")
         .layer
           Fireworks(ref="fireworks")
@@ -28,12 +30,12 @@ import CircleIn from '@/components/CircleIn'
 import Rain from '@/components/Rain'
 import FourLineBall from '@/components/FourLineBall'
 import WiggleText from '@/components/WiggleText'
-import NoiseWhite from '@/components/NoiseWhite'
-import NoiseBlack from '@/components/NoiseBlack'
+import Noise from '@/components/Noise'
 import SkewTextIn from '@/components/SkewTextIn'
 import WhiteShow from '@/components/WhiteShow'
 import FourLine from '@/components/FourLine'
 import Background from '@/components/Background'
+import MainText from '@/components/MainText'
 import Fireworks from '@/components/Fireworks'
 import moment from 'moment'
 
@@ -44,12 +46,12 @@ export default {
     Rain,
     FourLineBall,
     WiggleText,
-    NoiseWhite,
-    NoiseBlack,
+    Noise,
     SkewTextIn,
     WhiteShow,
     FourLine,
     Background,
+    MainText,
     Fireworks
   },
   data() {

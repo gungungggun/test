@@ -1,7 +1,7 @@
 <template lang="pug">
 .glitch
   .text(v-for="i in 5" :class="{ last: i == 5}" :style="clipDelay(i)")
-    p(:style="{ fontSize: fontSize + 'px' }") {{ text }}
+    p(:style="{ fontSize: fontSize + 'px' }" v-html="text")
 </template>
 
 <script>
@@ -26,6 +26,10 @@ export default {
     hi: {
       type: Array,
       default: () => [0.55, 0.1, 0.25, 0.1]
+    },
+    line: {
+      type: Number,
+      defualt: 1
     }
   },
   methods: {
@@ -36,8 +40,8 @@ export default {
           before += this.hi[i]
         }
       }
-      const start = this.fontSize * before
-      let end = start + this.fontSize * this.hi[n - 1]
+      const start = this.fontSize * this.line * before
+      let end = start + this.fontSize * this.line * this.hi[n - 1]
       if (n == this.hi.length) {
         end = end + 10
       }
@@ -77,6 +81,9 @@ export default {
   .text
     p
       margin 0
+      text-align center
+      line-height 1
+      font-weight bold
     &.last
       visibility hidden
     &:not(.last)

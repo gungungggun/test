@@ -1,6 +1,6 @@
 <template lang="pug">
 .skew-text-in
-  Glitch(text="てすとてすと" :delay="1.5" :fontSize="30")
+  Glitch(text="てすとてすと" :delay="1.5" :fontSize="40")
 </template>
 
 <script>

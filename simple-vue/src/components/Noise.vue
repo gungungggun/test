@@ -1,5 +1,5 @@
 <template lang="pug">
-.noise-white(:style="{zIndex: zIndex}")
+.noise-white(:style="{zIndex: zIndex, animationDelay: delay + 0.3 + 's'}")
   .noise(:style="{backgroundColor: bg, animationDelay: delay + 0.1 + 's'}")
   .noise(:style="{backgroundColor: bg, animationDelay: delay + 0.2 + 's'}")
   .noise(:style="{backgroundColor: bg, animationDelay: delay + 's'}")
