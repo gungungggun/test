@@ -1,6 +1,6 @@
 <template lang="pug">
 .skew-text-in
-  Glitch(text="てすとてすと" :isAnim="true")
+  Glitch(text="てすとてすと" :delay="1.5" :fontSize="30")
 </template>
 
 <script>
@@ -13,6 +13,14 @@ export default {
 </script>
 
 <style lang="stylus">
+@keyframes skewIn
+  0%
+    transform translate(-50%, -50%) rotate(5deg) scale(3)
+    opacity 0
+  100%
+    transform translate(-50%, -50%) rotate(-5deg) scale(1)
+    opacity 1
+
 .skew-text-in
   position absolute
   top 50vh
@@ -20,8 +28,8 @@ export default {
   width 65%
   transform translate(-50%, -50%) rotate(-5deg)
   z-index 1
-  //opacity 0
-  //animation: 0.4s cubic-bezier(0, 0, 0.22, 0.99) 1.35s 1 normal forwards running lbBqII;
+  opacity 0
+  animation 0.4s cubic-bezier(0, 0, 0.22, 0.99) 1.35s 1 normal forwards running skewIn
   p
     text-align center
     color #fff

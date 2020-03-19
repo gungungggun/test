@@ -1,6 +1,6 @@
 <template lang="pug">
-.glitch(:class="{ go: isAnim }")
-  .text(v-for="i in 5" :class="{ last: i == 5}" :style="clip(i)")
+.glitch
+  .text(v-for="i in 5" :class="{ last: i == 5}" :style="clipDelay(i)")
     p(:style="{ fontSize: fontSize + 'px' }") {{ text }}
 </template>
 
@@ -15,9 +15,13 @@ export default {
       type: String,
       default: ''
     },
-    isAnim: {
-      type: Boolean,
-      default: false
+    delay: {
+      type: Number,
+      default: 0
+    },
+    delays: {
+      type: Array,
+      default: () => [0, 0.15, 0.1, 0.1]
     },
     hi: {
       type: Array,
@@ -25,7 +29,7 @@ export default {
     }
   },
   methods: {
-    clip(n) {
+    clipDelay(n) {
       let before = 0
       if (n > 1) {
         for (let i = 0; i < n - 1; i++) {
@@ -38,7 +42,8 @@ export default {
         end = end + 10
       }
       return {
-        clip: `rect(${start}px, 9999px, ${end}px, 0)`
+        clip: `rect(${start}px, 9999px, ${end}px, 0)`,
+        animationDelay: this.delay + this.delays[n - 1] + 's'
       }
     }
   }
@@ -69,16 +74,6 @@ export default {
 
 .glitch
   position initial
-  &.go
-    .text
-      &:nth-of-type(1)
-        animation 0.2s ease-in-out 0s 1 normal forwards running glitch1
-      &:nth-of-type(2)
-        animation 0.2s ease-in-out 0.15s 1 normal forwards running glitch2
-      &:nth-of-type(3)
-        animation 0.2s ease-in-out 0.1s 1 normal forwards running glitch3
-      &:nth-of-type(4)
-        animation 0.2s ease-in-out 0.1s 1 normal forwards running glitch4
   .text
     p
       margin 0
@@ -90,4 +85,12 @@ export default {
       left 0
       width 100%
       height 100%
+    &:nth-of-type(1)
+      animation 0.2s ease-in-out 0s 1 normal forwards running glitch1
+    &:nth-of-type(2)
+      animation 0.2s ease-in-out 0.15s 1 normal forwards running glitch2
+    &:nth-of-type(3)
+      animation 0.2s ease-in-out 0.1s 1 normal forwards running glitch3
+    &:nth-of-type(4)
+      animation 0.2s ease-in-out 0.1s 1 normal forwards running glitch4
 </style>

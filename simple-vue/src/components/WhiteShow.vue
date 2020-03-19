@@ -25,6 +25,14 @@ export default {
   100%
     transform translateX(0)
 
+@keyframes show
+  0%, 100%
+    transform translate(-50%, -50%)
+  20%
+    transform translate(calc(-50% + 1.5px), calc(-50% + 1.5px))
+  80%
+    transform translate(calc(-50% - 1.5px), calc(-50% - 1.5px))
+
 .white-show
   width 100%
   height 100vh
@@ -46,7 +54,7 @@ export default {
     transform translate(-50%, -50%)
     padding 4px 30px
     overflow hidden
-    //animation 1.4s ease-in-out 1.5s 2 normal forwards running kUnJWM;
+    animation 1.4s ease-in-out 1.5s 2 normal forwards running show
     &:before
       content ""
       display block

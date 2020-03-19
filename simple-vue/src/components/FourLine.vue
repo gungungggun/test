@@ -27,6 +27,7 @@
   left 0
   display grid
   grid-template-columns repeat(4, 1fr)
+  z-index 2
   .line
     &:before
       content ""
@@ -35,7 +36,7 @@
       height 100%
       transform translateY(-100%)
       border-radius 9999px
-      background linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%), linear-gradient(to right, rgba(18, 86, 179, 0.9), rgba(255, 25, 82, 0.9))
+      background linear-gradient(rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%), linear-gradient(rgba(18, 86, 179, 0.9), rgba(255, 25, 82, 0.9))
       animation 0.6s cubic-bezier(0.4, 0.26, 0.15, 0.99) 0s 1 normal forwards running goLineTop
       animation-delay 2.75s
     &:nth-child(2)

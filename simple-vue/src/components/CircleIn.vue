@@ -24,8 +24,8 @@
 
 .circle-in
   position absolute
-  top calc(25% - 25vmin)
-  left calc(50% - 25vmin)
+  top 25% // calc(25% - 25vmin)
+  left 50% //calc(50% - 25vmin)
   width 50vmin
   height 50vmin
   animation 0.6s ease-in-out 0.1s 1 normal forwards running skewIn

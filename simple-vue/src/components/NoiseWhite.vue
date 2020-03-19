@@ -1,52 +1,63 @@
 <template lang="pug">
-.noise-white
-  .noise
-  .noise
-  .noise
-  .noise
-  .noise
+.noise-white(:style="{zIndex: zIndex}")
+  .noise(:style="{backgroundColor: bg, animationDelay: delay + 0.1 + 's'}")
+  .noise(:style="{backgroundColor: bg, animationDelay: delay + 0.2 + 's'}")
+  .noise(:style="{backgroundColor: bg, animationDelay: delay + 's'}")
+  .noise(:style="{backgroundColor: bg, animationDelay: delay + 0.25 + 's'}")
+  .noise(:style="{backgroundColor: bg, animationDelay: delay + 0.14 + 's'}")
 </template>
 
 <script>
 export default {
   props: {
-    date: Object
+    bg: {
+      type: String,
+      default: '#fff'
+    },
+    zIndex: {
+      type: Number,
+      default: 0
+    },
+    delay: {
+      type: Number,
+      default: 1
+    }
   }
 }
 </script>
 
 <style lang="stylus">
-@keyframes noiseWhite1
+@keyframes noise1
   0%, 100%
     transform translateX(0)
   50%
     transform translateX(15%)
 
-@keyframes noiseWhite2
+@keyframes noise2
   0%, 100%
     transform translateX(0)
   50%
     transform translateX(28%)
 
-@keyframes noiseWhite3
+@keyframes noise3
   0%, 100%
     transform translateX(0)
   50%
     transform translateX(-52%)
 
-@keyframes noiseWhite4
+@keyframes noise4
   0%, 100%
     transform translateX(0)
   50%
     transform translateX(50%)
 
-@keyframes noiseWhite5
+@keyframes noise5
   0%, 100%
     transform translateX(0)
   50%
     transform translateX(-15%)
 
-@keyframes noiseWhite
+@keyframes noise
   0%
     transform translate(0px, 0px)
   32%
@@ -63,7 +74,7 @@ export default {
   width 100%
   height 100vh
   opacity .8
-  animation 0.12s ease-in-out 1.3s 1 normal forwards running noiseWhite
+  animation 0.12s ease-in-out 1.3s 1 normal forwards running noise
   .noise
     position absolute
     width 100%
@@ -74,30 +85,30 @@ export default {
       top 0
       left -100%
       height 40%
-      animation-name noiseWhite1
+      animation-name noise1
       animation-delay 1.1s
     &:nth-child(2)
       top 40%
       left -100%
       height 5%
-      animation-name noiseWhite2
+      animation-name noise2
       animation-delay 1.2s
     &:nth-child(3)
       top 45%
       left 100%
       height 10%
-      animation-name noiseWhite3
+      animation-name noise3
       animation-delay 1s
     &:nth-child(4)
       top 55%
       left -100%
       height 25%
-      animation-name noiseWhite4
+      animation-name noise4
       animation-delay 1.25s
     &:nth-child(5)
       bottom 0
       left 100%
       height 20%
-      animation-name noiseWhite5
+      animation-name noise5
       animation-delay 1.14s
 </style>

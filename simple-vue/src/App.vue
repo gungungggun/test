@@ -7,9 +7,11 @@
         FourLineBall
         WiggleText(text="Yyi")
         NoiseWhite
-        //WhiteShow(:text="date.format('YYYY.MM.DD')")
         SkewTextIn
-        //FourLine
+        WhiteShow(:text="date.format('YYYY.MM.DD')")
+        NoiseWhite(bg="#000" :delay="2.15" :zIndex="1")
+        FourLine
+        Background
         // Date(:date="date")
         .layer
           Fireworks(ref="fireworks")
@@ -27,9 +29,11 @@ import Rain from '@/components/Rain'
 import FourLineBall from '@/components/FourLineBall'
 import WiggleText from '@/components/WiggleText'
 import NoiseWhite from '@/components/NoiseWhite'
+import NoiseBlack from '@/components/NoiseBlack'
 import SkewTextIn from '@/components/SkewTextIn'
 import WhiteShow from '@/components/WhiteShow'
 import FourLine from '@/components/FourLine'
+import Background from '@/components/Background'
 import Fireworks from '@/components/Fireworks'
 import moment from 'moment'
 
@@ -41,9 +45,11 @@ export default {
     FourLineBall,
     WiggleText,
     NoiseWhite,
+    NoiseBlack,
     SkewTextIn,
     WhiteShow,
     FourLine,
+    Background,
     Fireworks
   },
   data() {
