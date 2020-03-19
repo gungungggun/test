@@ -24,7 +24,7 @@
 
 .circle-in
   position absolute
-  top 25% // calc(25% - 25vmin)
+  top 50% // calc(25% - 25vmin)
   left 50% //calc(50% - 25vmin)
   width 50vmin
   height 50vmin

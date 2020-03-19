@@ -1,5 +1,5 @@
 <template lang="pug">
-.glitch
+.glitch(:class="{ anim: isAnim }")
   .text(v-for="i in 5" :class="{ last: i == 5}" :style="clipDelay(i)")
     p(:style="{ fontSize: fontSize + 'px' }" v-html="text")
 </template>
@@ -15,6 +15,10 @@ export default {
       type: String,
       default: ''
     },
+    isAnim: {
+      type: Boolean,
+      default: true
+    },
     delay: {
       type: Number,
       default: 0
@@ -29,7 +33,7 @@ export default {
     },
     line: {
       type: Number,
-      defualt: 1
+      default: 1
     }
   },
   methods: {
@@ -92,12 +96,14 @@ export default {
       left 0
       width 100%
       height 100%
-    &:nth-of-type(1)
-      animation 0.2s ease-in-out 0s 1 normal forwards running glitch1
-    &:nth-of-type(2)
-      animation 0.2s ease-in-out 0.15s 1 normal forwards running glitch2
-    &:nth-of-type(3)
-      animation 0.2s ease-in-out 0.1s 1 normal forwards running glitch3
-    &:nth-of-type(4)
-      animation 0.2s ease-in-out 0.1s 1 normal forwards running glitch4
+  &.anim
+    .text
+      &:nth-of-type(1)
+        animation 0.2s ease-in-out 0s 1 normal forwards running glitch1
+      &:nth-of-type(2)
+        animation 0.2s ease-in-out 0.15s 1 normal forwards running glitch2
+      &:nth-of-type(3)
+        animation 0.2s ease-in-out 0.1s 1 normal forwards running glitch3
+      &:nth-of-type(4)
+        animation 0.2s ease-in-out 0.1s 1 normal forwards running glitch4
 </style>

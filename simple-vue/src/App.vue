@@ -6,24 +6,24 @@
           p(v-if="!isNext") 画面をタップすると花火が出るよ
           p(v-else) スクロールで次のページへ
         CircleIn
-        Rain
-        FourLineBall
-        WiggleText(text="Yyi")
-        Noise
-        SkewTextIn
-        WhiteShow(:text="date.format('YYYY.MM.DD')")
-        Noise(bg="#000" :delay="2.15" :zIndex="1")
-        FourLine
-        Background
-        MainText
-        SubText
-        PointText
-        UnderText(:date="date")
-        Noise(:delay="3.3" :zIndex="2")
-        .layer
-          Fireworks(ref="fireworks" :hue="hue" @fire="fire")
+        //Rain
+        //FourLineBall
+        //WiggleText(text="Yyi")
+        //Noise
+        //SkewTextIn
+        //WhiteShow(:text="date.format('YYYY.MM.DD')")
+        //Noise(bg="#000" :delay="2.15" :zIndex="1")
+        //FourLine
+        //Background
+        //MainText
+        //SubText
+        //PointText
+        //UnderText(:date="date")
+        //Noise(:delay="3.3" :zIndex="2")
+        //.layer
+        //  Fireworks(ref="fireworks" :hue="hue" @fire="fire")
       .section
-        p Second section ...
+        Section1
 </template>
 
 <script>
@@ -41,6 +41,7 @@ import SubText from '@/components/SubText'
 import PointText from '@/components/PointText'
 import UnderText from '@/components/UnderText'
 import Fireworks from '@/components/Fireworks'
+import Section1 from '@/components/Section1'
 import moment from 'moment'
 
 export default {
@@ -58,7 +59,8 @@ export default {
     SubText,
     PointText,
     UnderText,
-    Fireworks
+    Fireworks,
+    Section1
   },
   data() {
     return {
@@ -69,7 +71,7 @@ export default {
       page: false,
       options: {
         v2compatible: true,
-        sectionsColor: ['#000', '#ff5f45'],
+        sectionsColor: ['#000', '#000'],
         touchSensitivity: 15,
         afterLoad: this.afterLoad
       }
@@ -90,8 +92,8 @@ export default {
     const self = this
     setTimeout(() => {
       self.isShowHeader = true
-      self.$refs.fireworks.start()
-      self.$refs.fireworks.tappable()
+      //self.$refs.fireworks.start()
+      //self.$refs.fireworks.tappable()
     }, 4300)
   }
 }
@@ -103,6 +105,7 @@ body, html
   padding 0
   .section
     .fp-tableCell
+      position relative
       display flex
       justify-content center
       align-items center

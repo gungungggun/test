@@ -23,7 +23,7 @@
   display grid
   justify-content space-between
   position absolute
-  top 25%
+  top 50%
   left 50%
   transform translate(-50%, -50%) rotate(35deg)
   .wrap

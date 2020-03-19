@@ -22,7 +22,7 @@
   width 24vmin
   height 24vmin
   position absolute
-  top 25%
+  top 50%
   left 50%
   clip-path circle(50% at 50% 50%)
   transform translate(-50%, -50%) rotate(35deg)

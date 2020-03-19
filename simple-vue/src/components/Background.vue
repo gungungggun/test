@@ -3,12 +3,6 @@
 </template>
 
 <style lang="stylus">
-@keyframes bg
-  0%
-    opacity 0
-  100%
-    opacity 1
-
 .background
   position absolute
   height 100vh
@@ -17,8 +11,7 @@
   right 0px
   bottom 0px
   opacity 0
-  background linear-gradient(64deg, rgba(#15181b, 0.9), rgba(255, 25, 82, 0.9)) white
-  animation 0.1s ease-out 2.92s 1 normal forwards running bg
+  background linear-gradient(64deg, rgba(#15181b, 0.9), rgba(25, 25, 82, 0.9)) #000
   z-index 1
   &:after
     content ""
