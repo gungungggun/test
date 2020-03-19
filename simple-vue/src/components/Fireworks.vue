@@ -53,6 +53,7 @@ export default {
       automate: true,
       particles: [],
       frame: 0,
+      count: 0
     }
   },
   methods: {
@@ -90,6 +91,8 @@ export default {
         })
         this.particles.push(particle)
       }
+      this.count++
+      this.$emit('fire', this.count)
     },
     clear() {
       ctx.globalCompositeOperation = 'destination-out'
@@ -101,7 +104,9 @@ export default {
       this.clear()
 
       if (this.automate && this.frame % 75 === 0) {
-        this.createRandomParticles()
+        if (this.count < 3) {
+          this.createRandomParticles()
+        }
       }
 
       this.particles.forEach((particle) => {
@@ -146,11 +151,13 @@ export default {
     stop() {
       this.setStage()
       window.cancelAnimationFrame(this.reqId)
+    },
+    tappable() {
+      canvas.addEventListener('mousedown', this.boom)
     }
   },
   mounted() {
     this.automate = true
-    canvas.addEventListener('mousedown', this.boom)
     window.addEventListener('resize', this.setStage)
     this.$refs.fireworks.appendChild(canvas)
   }

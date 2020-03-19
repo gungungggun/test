@@ -1,7 +1,7 @@
 <template lang="pug">
 .main-text
   .wrap
-    Glitch(text="アニメーション<br>テストモード" :delay="3.35" :fontSize="40" :line="2")
+    Glitch(text="アニメーション<br>テストモード" :delay="3.35" :fontSize="50" :line="2")
 </template>
 
 <script>
@@ -34,7 +34,7 @@ export default {
   display grid
   justify-items center
   position absolute
-  top calc(100vh - 40px)
+  top calc(100vh - 80px)
   left 50%
   width 100%
   transform translate(-50%, -50%)

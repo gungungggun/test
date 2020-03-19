@@ -42,20 +42,23 @@ export default {
     &.year
       transform scaleY(0)
       animation 0.5s ease-in-out 0s 1 normal both running flipIn
+      animation-delay 4s
     &.month
       transform scaleY(0)
       animation 0.5s ease-in-out 0s 1 normal both running flipIn
-      animation-delay 0.1s
+      animation-delay 4.1s
     &.day
       transform scaleY(0)
       animation 0.5s ease-in-out 0s 1 normal both running flipIn
-      animation-delay 0.2s
+      animation-delay 4.2s
     &.ddd
       transform scaleY(0)
       animation 0.5s ease-in-out 0s 1 normal both running flipIn
-      animation-delay 0.25s
+      animation-delay 4.25s
     &.dot1
       animation 0.5s ease-out .15s 1 normal both running dotIn
+      animation-delay 4.15s
     &.dot2
       animation 0.5s ease-out .2s 1 normal both running dotIn
+      animation-delay 4.2s
 </style>
