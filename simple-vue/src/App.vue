@@ -3,6 +3,8 @@
     full-page(ref="fullpage" :options="options")
       .section
         CircleIn
+        Rain
+        FourLineBall
         WiggleText(text="Yyi")
         NoiseWhite
         //WhiteShow(:text="date.format('YYYY.MM.DD')")
@@ -21,6 +23,8 @@
 <script>
 import Date from '@/components/Date'
 import CircleIn from '@/components/CircleIn'
+import Rain from '@/components/Rain'
+import FourLineBall from '@/components/FourLineBall'
 import WiggleText from '@/components/WiggleText'
 import NoiseWhite from '@/components/NoiseWhite'
 import SkewTextIn from '@/components/SkewTextIn'
@@ -33,6 +37,8 @@ export default {
   components: {
     Date,
     CircleIn,
+    Rain,
+    FourLineBall,
     WiggleText,
     NoiseWhite,
     SkewTextIn,
